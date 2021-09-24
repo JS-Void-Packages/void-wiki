@@ -3,7 +3,7 @@
     default_title = 'Default Title'
 [general]
     check_for_update = false
-# global metadata stuff
+# global metadata stuff, can be overwritten in any of the page/template
 [metadata]
     # description for the search engine
     description = 'Your application description'
@@ -11,4 +11,4 @@
     # available : index, follow, noindex, nofollow
     robots = 'index, follow'
     # charset, default to UTF-8
-    charset= 'UTF-8'
+    charset = 'UTF-8'

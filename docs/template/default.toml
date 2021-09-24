@@ -1,2 +1,3 @@
-[template]
-    name = 'default'
+name = 'default'
+background = 'default' # custom background, anything css can accept, this can accept it as well. wouldn't recommend changing this, rather use a class to change it
+class_list = [] # empty class list

@@ -4,7 +4,7 @@
 */
 const path = require('path')
 
-class ResourceLocation {
+module.exports = class ResourceLocation {
     /**
      * 
      * @param {string} name 

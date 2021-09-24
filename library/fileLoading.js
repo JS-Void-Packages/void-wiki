@@ -6,6 +6,7 @@ const fs = require('fs')
 const path = require('path')
 const voidLogger = require('void-logger')
 const TOML = require('@iarna/toml')
+const resourceLocation = require('./resource_location')
 const Logger = new voidLogger('void-wiki').setLogLocation('.')
 
 /**
@@ -28,7 +29,7 @@ const loadTOML = (file) => {
     return TOML.parse(loadFile(file))
 }
 
-let templates = {}
+let templates = []
 
 const loadTemplates = () => {
     let f = './docs/template'
@@ -38,9 +39,17 @@ const loadTemplates = () => {
         if(file.endsWith('.toml')) {
             let file_path = path.join(f, file)
             let name = file.split('.')[0]
-            templates[name] = loadTOML(file_path)
+            templates.push(loadTOML(file_path))
         }
     }
+}
+
+/**
+ * Find a Template and return its data.
+ * @param {string} template_name 
+ */
+const findTemplate = (template_name) => {
+
 }
 
 const readTemplate = () => {
