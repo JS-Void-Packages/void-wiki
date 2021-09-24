@@ -1,0 +1,23 @@
+{
+  "name": "void-wiki",
+  "version": "1.0.0",
+  "description": "Wiki system made with nodeJS",
+  "main": "index.js",
+  "homepage": "https://mrthomas20121.github.io/{repo}",
+  "directories": {
+    "docs": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Wiki",
+    "System"
+  ],
+  "author": "Mrthomas20121",
+  "license": "MIT",
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "void-logger": "^1.0.1"
+  }
+}
