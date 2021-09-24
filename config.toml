@@ -1,7 +1,10 @@
-# metadata stuff
+# global variables that can be used in any scripts
+[global_variable]
+    default_title = 'Default Title'
+[general]
+    check_for_update = false
+# global metadata stuff
 [metadata]
-    # default page title for any pages
-    title = 'Your App title'
     # description for the search engine
     description = 'Your application description'
     # robot tags for the search engine
