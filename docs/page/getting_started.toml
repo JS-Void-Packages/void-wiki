@@ -1,0 +1,7 @@
+[template]
+    # base template to use
+    base = 'template:default'
+[data]
+    # title is not necessary, if none added it will use the title set in metadata.toml. you can tell it to use the file name as title
+    # example : title 'getting_started' will show up as 'Getting Started'
+    title = '${file_name}'

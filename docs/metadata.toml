@@ -1,0 +1,11 @@
+# metadata stuff
+[metadata]
+    # default page title for any pages
+    title = 'Your App title'
+    # description for the search engine
+    description = 'Your application description'
+    # robot tags for the search engine
+    # available : index, follow, noindex, nofollow
+    robots = 'index, follow'
+    # charset, default to UTF-8
+    charset= 'UTF-8'

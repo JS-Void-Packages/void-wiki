@@ -1,0 +1,4 @@
+[menu]
+    [menu.logo]
+        # images are loaded from the images folder
+        text = "image:logo.png"
