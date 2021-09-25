@@ -1,1 +1,1 @@
-let base_html = '<!DOCTYPE html>\n'
+let base_html = '<!DOCTYPE html>'
