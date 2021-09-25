@@ -1,0 +1,18 @@
+# author
+author = 'mrthomas20121'
+# template name
+template_name = 'sidebar'
+# template required to work. note: a template isn't loaded unless you need it.
+requireTemplate = ['template:sidebar-item']
+requireCss = [] # no css required
+requireJS = [] # no Javascript File required
+
+[html]
+    [html.div]
+        class = 'col-2'
+        # Wiki logo
+        [html.div.a]
+           text = '$wiki_name'
+        [html.div.ul]
+            class = 'nav flex-column'
+            listOf = 'sidebar_item'

@@ -29,9 +29,8 @@ const loadTOML = (file) => {
     return TOML.parse(loadFile(file))
 }
 
-let templates = []
-
 const loadTemplates = () => {
+    let templates = []
     let f = './docs/template'
     const folder = fs.readdirSync(f)
     for(let file of folder) {
@@ -42,20 +41,113 @@ const loadTemplates = () => {
             templates.push(loadTOML(file_path))
         }
     }
+    return templates
+}
+
+class TemplateManager {
+    templates = []
+    html_templates = []
+    sidebar = ''
+
+    constructor() {}
+
+    /**
+     * 
+     * @param {any} item 
+     */
+    add(item) {
+        this.templates.push(item)
+    }
+
+    readTemplate(template) {
+        let result = template
+        this.html_templates.push(result)
+    }
+}
+
+class Element {
+
+    attribute_list = {}
+
+    /**
+     * @type {Element[]}
+     */
+    children = []
+
+    /**
+     * @param {string} name 
+     */
+    constructor(name) {
+        // if name has a dot, get the latest part of the string
+        if(name.includes('.')) {
+            let nameSplit = name.split('.')[name.length-1]
+            this.custom_name = nameSplit
+        }
+        else {
+            this.custom_name = name
+        }
+    }
+
+    addAttributeFromMap(map) {
+        this.attribute_list = map
+    }
+
+    /**
+     * Add an attribute
+     * @param {string} name 
+     * @param {*} value 
+     */
+    addAttribute(name, value) {
+        this.attribute_list[name] = value
+    }
+
+    buildAttribute() {
+        let keys = Object.keys(this.attribute_list)
+        if(keys.length > 0) {
+            let output = ' '
+            for(let key of keys) {
+                let elem = this.attribute_list[key]
+                output+=`${key}=${elem}`
+            }
+            return output
+        }
+        return ''
+    }
+
+    buildElement() {
+        let html = `<${this.custom_name}${this.buildAttribute()}>`
+
+        // check if it has children
+        if(this.children.length > 0) {
+            for(let child of this.children) {
+                html = child.buildElement()
+            }
+        }
+        html+=`</${this.custom_name}>`
+        return html
+    }
 }
 
 /**
- * Find a Template and return its data.
- * @param {string} template_name 
+ * 
+ * @param {{}} template 
+ * @returns {string}
  */
-const findTemplate = (template_name) => {
+const readTemplate = (template) => {
+    let html = ''
+    
+    for(let base_key in template) {
+        let curr_object = template[base_key]
+        let element = new Element(base_key)
+        if(curr_object.hasOwnProperty('attribute')) {
+            element.addAttributeFromMap(curr_object.attribute)
+        }
+        html+=element.buildElement()
+    }
 
+    return html
 }
 
-const readTemplate = () => {
 
-}
 
-loadTemplates()
-
-console.log(templates)
+console.log(readTemplate(loadTOML('./docs/template/sidebar.toml')))

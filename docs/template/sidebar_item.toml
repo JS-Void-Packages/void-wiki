@@ -1,0 +1,15 @@
+# author
+author = 'mrthomas20121'
+# template name
+template_name = 'sidebar_item'
+requireTemplate = [] # no Template required
+requireCss = ['custom_css.css']
+requireJS = [] # no Javascript File required
+
+[html]
+    [html.li]
+        class = 'nav-item'
+        [html.Li.a]
+            text = '$data'
+            class = 'nav-link'
+            href = '#'

@@ -1,9 +1,8 @@
+requireTemplate = ['template:sidebar']
 [sidebar]
 
     [sidebar.about]
         text = 'about page'
-        click = 'about'
 
     [sidebar.page2]
         text = 'page2 page'
-        click = 'page2'

@@ -1,0 +1,11 @@
+/*
+Custom css made for the project
+*/
+.img-thumbnail, .img-thumbnail.bg-dark {
+    border: none;
+    background-color: #343434;
+}
+
+.nav-link, .nav-link:active, .nav-link:hover, .nav-link:visited {
+    color:white;
+}
