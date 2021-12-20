@@ -1,0 +1,8 @@
+include ./sidebar_item.pug
+
+.col-2.bg-dark
+    a(href="#")
+        img.img-thumbnail(src="./images/logo.png")
+    ul.nav.flex-column.nav-pills
+        each item in list
+            +sidebar_item(item)

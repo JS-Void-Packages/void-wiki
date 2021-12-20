@@ -1,6 +1,6 @@
-requireTemplate = ['template:sidebar']
+requireTemplate = ['template:sidebar_logo']
 [sidebar]
-
+    logo = 'logo.png' # the sidebar logo
     [sidebar.about]
         text = 'about page'
 

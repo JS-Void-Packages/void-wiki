@@ -1,7 +1,7 @@
 # author
 author = 'mrthomas20121'
 # template name
-template_name = 'sidebar'
+template_name = 'sidebar_logo'
 # template required to work. note: a template isn't loaded unless you need it.
 requireTemplate = ['template:sidebar-item']
 requireCss = [] # no css required
@@ -14,7 +14,7 @@ requireJS = [] # no Javascript File required
         [html.div.a]
             [html.div.a.img]
                 class = 'img-thumbnail'
-                src = 'images:logo.png'
+                src = '$logo'
         [html.div.ul]
             class = 'nav flex-column'
-            listOf = 'sidebar_item'
+            #include = 'template:sidebar_item'

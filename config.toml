@@ -5,7 +5,7 @@
 [general]
     check_for_update = false
     # void-wiki use bootstrap. any theme can be added in the css folder. 'theme' must be the name of the css file
-    theme = 'bootstrap_purple_theme.css'
+    theme = 'purple'
 # global metadata stuff, can be overwritten in any of the page/template
 [metadata]
     # description for the search engine
